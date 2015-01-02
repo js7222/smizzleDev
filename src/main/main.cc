@@ -1,9 +1,26 @@
+#include <iostream> 
+#include <iomanip> 
+#include <boost/units/base_units/angle/radian.hpp> 
+#include <boost/units/systems/si/io.hpp> 
 
-#include <test.h>
-#include <iostream>
+int main() 
+{ 
+  typedef boost::units::quantity<boost::units::si::angular_velocity> AngularVelocity; 
+  using boost::units::si::radians_per_second; 
 
-int main(int argn, char** argv)
-{
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
-}
+  typedef boost::units::quantity<boost::units::si::plane_angle> Angle;
+  using boost::units::si::radians;
+  typedef boost::units::quantity<boost::units::si::time> Time;
+  using boost::units::si::seconds;
+  const Angle angle(2.0 * M_PI * radians);
+  const Time time(16 * seconds);
+  const AngularVelocity av = angle/time;
+  
+  const AngularVelocity delta(2.0 * M_PI * radians_per_second / 16.0); 
+  const AngularVelocity j(2.0 * M_PI * radians_per_second); 
+  std::cout << std::setprecision(20); 
+  for (AngularVelocity i(0.0 * M_PI * radians_per_second); i<j; i+=delta) 
+  { 
+    std::cout << "sin(" << i << ") = " << std::sin(i.value()) << '\n'; 
+  } 
+} 
