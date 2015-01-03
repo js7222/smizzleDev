@@ -2,6 +2,9 @@
 #include <iomanip> 
 #include <boost/units/base_units/angle/radian.hpp> 
 #include <boost/units/systems/si/io.hpp> 
+#include <cmath>
+#include <unistd.h>
+#include <cstdio>
 
 int main() 
 { 
@@ -23,4 +26,21 @@ int main()
   { 
     std::cout << "sin(" << i << ") = " << std::sin(i.value()) << '\n'; 
   } 
+
+  double thetaCurrent = M_PI / 4;
+  double omegaCurrent = .0;
+  double deltaT = .0001;
+
+  while(true)
+  {
+      std::cout << "thetaCurrent: " << thetaCurrent << " omegaCurrent: " << omegaCurrent << std::endl;
+      fflush(stdout);
+      double thetaNext = thetaCurrent + omegaCurrent * deltaT;
+      double omegaNext = omegaCurrent - thetaCurrent * deltaT;
+      thetaCurrent = thetaNext;
+      omegaCurrent = omegaNext;
+      usleep(100);
+
+  }
+
 } 
