@@ -1,5 +1,0 @@
-
-#qt5_wrap_ui(UIS_HDRS dialog.ui)
-qt5_wrap_ui(UIS_HDRS ${HW_GUI_DIR}/dialog.ui)
-add_executable (Test main.cpp mainwindow.cpp smizzleGraphicsView.cpp ${UIS_HDRS})
-target_link_libraries(Test Qt5::Core Qt5::Widgets)

@@ -12,7 +12,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC" )
 
 file (GLOB Resources *.qrc)
 
-set(HW_GUI_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../gui)
+set(HW_GUI_DIR ${CMAKE_SOURCE_DIR}/gui)
 
 QT5_ADD_RESOURCES (ResourceSources ${Resources})
 
