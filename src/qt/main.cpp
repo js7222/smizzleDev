@@ -1,12 +1,12 @@
 #include <QApplication>
 #include <QTextEdit>
-#include <mainwindow.h>
+#include <anotherwindow.h>
 
 int main(int argv, char **args)
 {
     QApplication app(argv, args);
 
-    MainWindow window;
+    AnotherWindow window;
     window.show();
 
     return app.exec();

@@ -5,7 +5,8 @@ namespace smizzle
     {
 	class Pendulum
 	{
-
+	public:
+	    static int callThePendulum();
 	};
     }
 }

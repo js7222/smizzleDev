@@ -5,6 +5,7 @@
 #include <cmath>
 #include <unistd.h>
 #include <cstdio>
+#include <pendulum.h>
 
 int main() 
 { 
@@ -33,14 +34,15 @@ int main()
 
   while(true)
   {
-      std::cout << "thetaCurrent: " << thetaCurrent << " omegaCurrent: " << omegaCurrent << std::endl;
-      fflush(stdout);
-      double thetaNext = thetaCurrent + omegaCurrent * deltaT;
-      double omegaNext = omegaCurrent - thetaCurrent * deltaT;
-      thetaCurrent = thetaNext;
-      omegaCurrent = omegaNext;
-      usleep(100);
-
+//      std::cout << "thetaCurrent: " << thetaCurrent << " omegaCurrent: " << omegaCurrent << std::endl;
+//      fflush(stdout);
+//      double thetaNext = thetaCurrent + omegaCurrent * deltaT;
+//      double omegaNext = omegaCurrent - thetaCurrent * deltaT;
+//      thetaCurrent = thetaNext;
+//      omegaCurrent = omegaNext;
+//      usleep(100);
+      break;
   }
+  smizzle::pendulum::Pendulum::callThePendulum();
 
 } 

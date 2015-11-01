@@ -1,4 +1,5 @@
 
+MESSAGE( STATUS "CMAKE_ROOT: " ${CMAKE_ROOT} )
 find_package (Qt5 REQUIRED Core Widgets)
 include_directories(${Qt5Core_INCLUDE_DIRS})
 include_directories(${Qt5Widgets_INCLUDE_DIRS})
@@ -17,6 +18,6 @@ set(HW_GUI_DIR ${CMAKE_SOURCE_DIR}/gui)
 QT5_ADD_RESOURCES (ResourceSources ${Resources})
 
 #qt5_wrap_ui(UIS_HDRS dialog.ui)
-qt5_wrap_ui(UIS_HDRS ${HW_GUI_DIR}/dialog.ui)
-add_executable (Test main.cpp mainwindow.cpp smizzleGraphicsView.cpp ${UIS_HDRS})
+qt5_wrap_ui(UIS_HDRS ${HW_GUI_DIR}/dialog.ui ${HW_GUI_DIR}/anotherwindow.ui)
+add_executable (Test main.cpp mainwindow.cpp smizzleGraphicsView.cpp anotherwindow.cpp ${UIS_HDRS})
 target_link_libraries(Test Qt5::Core Qt5::Widgets)
