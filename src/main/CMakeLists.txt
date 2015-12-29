@@ -1,5 +1,5 @@
 
-add_executable(main main.cc)
+add_executable(main main.cc forward.cc)
 
 include_directories(${CMAKE_SOURCE_DIR}/src/pendulum)
 
