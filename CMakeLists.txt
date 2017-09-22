@@ -5,3 +5,5 @@ enable_testing()
 project(smizzleDev)
 
 add_subdirectory(src)
+
+add_subdirectory(fmt)

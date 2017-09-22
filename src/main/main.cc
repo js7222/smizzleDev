@@ -9,6 +9,7 @@
 #include <forward.h>
 #include <boost/intrusive/rbtree.hpp>
 
+#include <fmt/format.h>
 
 int main() 
 {
@@ -50,5 +51,7 @@ int main()
 ////  }
 ////  smizzle::pendulum::Pendulum::callThePendulum();
 //
+
+    std::cout << fmt::format("The answer is {}", 42) << std::endl;
     return 0;
 } 
