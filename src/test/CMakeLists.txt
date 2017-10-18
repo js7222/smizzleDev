@@ -17,6 +17,6 @@ target_include_directories(gtest INTERFACE
   "${CMAKE_BINARY_DIR}/src/test/gtest-src/include" )
 
 add_executable(mytest mytest.cc)
-include_directories(${CMAKE_SOURCE_DIR}/src/pendulum)
-target_link_libraries(mytest pendulum gtest_main)
+include_directories(${CMAKE_SOURCE_DIR}/src)
+target_link_libraries(mytest pendulum sudoku gtest_main)
 add_test(NAME mytest COMMAND mytest)
